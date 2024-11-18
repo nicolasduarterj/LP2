@@ -143,7 +143,7 @@ void listar_contatos(contato const *contato_state, size_t numero_de_contatos, ch
 
 void procurar_contato(contato const *contato_state, size_t numero_de_contatos, char result_buffer[128], int *error_flag)
 {
-    char nome_desejado[32];
+    char nome_desejado[32] = {0};
     printf("Insira o nome a ser procurado:");
     fgets(nome_desejado, 32, stdin);
 

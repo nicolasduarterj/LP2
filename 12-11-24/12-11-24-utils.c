@@ -2,6 +2,7 @@
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 contato *ler_contatos(size_t *numero_de_contatos)
 {
@@ -13,8 +14,7 @@ contato *ler_contatos(size_t *numero_de_contatos)
     int32_t index = -1;
     while (fgets_result != NULL)
     {
-        for (size_t i = 0; i < 256; i++)
-            line[i] = '\0';
+        memset(line, '\0', 256);
         fgets_result = fgets(line, 256, log_read);
         switch (line[0])
         {
